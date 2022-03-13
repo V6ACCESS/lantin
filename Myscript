@@ -17,7 +17,7 @@ SSH_Port1='22'
 SSH_Port2='225'
 
 # Your SSH Banner
-SSH_Banner='https://raw.githubusercontent.com/V6ACCESS/banner/main/ServerMessages'
+SSH_Banner='https://pastebin.com/raw/d7jULvq8'
 
 # Dropbear Ports
 Dropbear_Port1='550'
@@ -578,12 +578,11 @@ reneg-sec 0
 verb 1
 http-proxy $IPADDR $Privoxy_Port1
 http-proxy-option VERSION 1.1
-http-proxy-option CUSTOM-HEADER ""
-http-proxy-option CUSTOM-HEADER "GET https://storage.googleapis.com HTTP/1.1"
-http-proxy-option CUSTOM-HEADER Host storage.googleapis.com
-http-proxy-option CUSTOM-HEADER X-Forward-Host storage.googleapis.com
-http-proxy-option CUSTOM-HEADER X-Forwarded-For storage.googleapis.com
-http-proxy-option CUSTOM-HEADER Referrer storage.googleapis.com
+http-proxy-retry
+http-proxy-option CUSTOM-HEADER Host www.googletagmanager.com
+http-proxy-option CUSTOM-HEADER Host www.googletagmanager.com
+http-proxy-option CUSTOM-HEADER Host www.googletagmanager.com
+http-proxy-option CUSTOM-HEADER Referrer www.googletagmanager.com
 
 <ca>
 $(cat /etc/openvpn/ca.crt)
@@ -614,8 +613,11 @@ reneg-sec 0
 verb 1
 http-proxy $IPADDR $Privoxy_Port1
 http-proxy-option VERSION 1.1
-http-proxy-option CUSTOM-HEADER Host www.googleapis.com
-http-proxy-option CUSTOM-HEADER X-Forwarded-For www.googleapis.com
+http-proxy-retry
+http-proxy-option CUSTOM-HEADER Host c3cdn.ml.youngjoygame.com
+http-proxy-option CUSTOM-HEADER X-Forward-Host c3cdn.ml.youngjoygame.com
+http-proxy-option CUSTOM-HEADER X-Forwarded-For c3cdn.ml.youngjoygame.com
+http-proxy-option CUSTOM-HEADER Referrer c3cdn.ml.youngjoygame.com
 
 <ca>
 $(cat /etc/openvpn/ca.crt)
@@ -645,9 +647,11 @@ setenv CLIENT_CERT 0
 reneg-sec 0
 verb 1
 http-proxy $IPADDR $Privoxy_Port1
-http-proxy-option CUSTOM-HEADER ""
-http-proxy-option CUSTOM-HEADER "POST https://viber.com HTTP/1.1"
-http-proxy-option CUSTOM-HEADER "X-Forwarded-For: viber.com"
+http-proxy-retry
+http-proxy-option CUSTOM-HEADER Host 0.facebook.com.tiktok.com.instagram.com.kumu.ph
+http-proxy-option CUSTOM-HEADER Host 0.facebook.com.tiktok.com.instagram.com.kumu.ph
+http-proxy-option CUSTOM-HEADER Host 0.facebook.com.tiktok.com.instagram.com.kumu.ph
+http-proxy-option CUSTOM-HEADER Referrer 0.facebook.com.tiktok.com.instagram.com.kumu.ph
 
 <ca>
 $(cat /etc/openvpn/ca.crt)
