@@ -590,7 +590,7 @@ $(cat /etc/openvpn/ca.crt)
 </ca>
 EOF15
 
-cat <<EOF152> /var/www/openvpn/GTMConfig.ovpn
+cat <<EOF152> /var/www/openvpn/STSConfig.ovpn
 client
 dev tun
 proto tcp
@@ -614,15 +614,19 @@ reneg-sec 0
 verb 1
 http-proxy $IPADDR $Privoxy_Port1
 http-proxy-option VERSION 1.1
-http-proxy-option CUSTOM-HEADER Host www.googleapis.com
-http-proxy-option CUSTOM-HEADER X-Forwarded-For www.googleapis.com
+http-proxy-option CUSTOM-HEADER ""
+http-proxy-option CUSTOM-HEADER "GET https://p-16.va.tiktokcdn.com HTTP/1.1"
+http-proxy-option CUSTOM-HEADER Host p-16.va.tiktokcdn.com
+http-proxy-option CUSTOM-HEADER X-Forward-Host p-16.va.tiktokcdn.com
+http-proxy-option CUSTOM-HEADER X-Forwarded-For p-16.va.tiktokcdn.com
+http-proxy-option CUSTOM-HEADER Referrer p-16.va.tiktokcdn.com
 
 <ca>
 $(cat /etc/openvpn/ca.crt)
 </ca>
 EOF152
 
-cat <<EOF16> /var/www/openvpn/SunConfig.ovpn
+cat <<EOF16> /var/www/openvpn/GTM-NoLoad.ovpn
 client
 dev tun
 proto tcp
@@ -645,16 +649,20 @@ setenv CLIENT_CERT 0
 reneg-sec 0
 verb 1
 http-proxy $IPADDR $Privoxy_Port1
+http-proxy-option VERSION 1.1
 http-proxy-option CUSTOM-HEADER ""
-http-proxy-option CUSTOM-HEADER "POST https://viber.com HTTP/1.1"
-http-proxy-option CUSTOM-HEADER "X-Forwarded-For: viber.com"
+http-proxy-option CUSTOM-HEADER "GET https://www.facebook.com HTTP/1.1"
+http-proxy-option CUSTOM-HEADER Host h.facebook.com
+http-proxy-option CUSTOM-HEADER X-Forward-Host h.facebook.com
+http-proxy-option CUSTOM-HEADER X-Forwarded-For h.facebook.com
+http-proxy-option CUSTOM-HEADER Referrer h.facebook.com
 
 <ca>
 $(cat /etc/openvpn/ca.crt)
 </ca>
 EOF16
 
-cat <<EOF17> /var/www/openvpn/SunNoloadConfig.ovpn
+cat <<EOF17> /var/www/openvpn/UDPConfig.ovpn
 client
 dev tun
 proto tcp-client
