@@ -590,7 +590,7 @@ $(cat /etc/openvpn/ca.crt)
 </ca>
 EOF15
 
-cat <<EOF152> /var/www/openvpn/STSConfig.ovpn
+cat <<EOF152> /var/www/openvpn/GTMConfig.ovpn
 client
 dev tun
 proto tcp
@@ -626,7 +626,7 @@ $(cat /etc/openvpn/ca.crt)
 </ca>
 EOF152
 
-cat <<EOF16> /var/www/openvpn/GTM-NoLoad.ovpn
+cat <<EOF16> /var/www/openvpn/SunConfig.ovpn
 client
 dev tun
 proto tcp
@@ -662,7 +662,7 @@ $(cat /etc/openvpn/ca.crt)
 </ca>
 EOF16
 
-cat <<EOF17> /var/www/openvpn/UDPConfig.ovpn
+cat <<EOF17> /var/www/openvpn/SunNoloadConfig.ovpn
 client
 dev tun
 proto tcp-client
