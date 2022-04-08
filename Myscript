@@ -252,7 +252,7 @@ cert /etc/openvpn/server.crt
 key /etc/openvpn/server.key
 dh /etc/openvpn/dh.pem
 duplicate-cn
-pinger-restart 0
+pinger-restart 1
 cipher none
 ncp-disable
 auth none
@@ -274,7 +274,7 @@ push "redirect-gateway def1"
 push "route-method exe"
 push "route-delay 2"
 client-to-client
-keepalive 50 120
+keepalive 60 120
 persist-tun
 persist-key
 persist-remote-ip
@@ -482,7 +482,7 @@ forwarded-connect-retries 1
 accept-intercepted-requests 1
 allow-cgi-request-crunching 1
 split-large-forms 0
-keep-alive-timeout 1
+keep-alive-timeout 5
 tolerate-pipelining 1
 socket-timeout 300
 permit-access 0.0.0.0/0 IP-ADDRESS
