@@ -252,6 +252,7 @@ cert /etc/openvpn/server.crt
 key /etc/openvpn/server.key
 dh /etc/openvpn/dh.pem
 duplicate-cn
+pinger-restart 0
 cipher none
 ncp-disable
 auth none
