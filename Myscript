@@ -273,7 +273,7 @@ push "redirect-gateway def1"
 push "route-method exe"
 push "route-delay 2"
 client-to-client
-keepalive 5 10
+keepalive 10 60
 persist-tun
 persist-key
 persist-remote-ip
@@ -481,7 +481,7 @@ forwarded-connect-retries 1
 accept-intercepted-requests 1
 allow-cgi-request-crunching 1
 split-large-forms 0
-keep-alive-timeout 5
+keep-alive-timeout 1
 tolerate-pipelining 1
 socket-timeout 300
 permit-access 0.0.0.0/0 IP-ADDRESS
