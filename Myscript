@@ -264,7 +264,7 @@ server 10.200.0.0 255.255.0.0
 tun-mtu 1500
 tun-mtu-extra 32
 mssfix 1400
-reneg-sec 0
+reneg-sec 3600
 sndbuf 0
 rcvbuf 0
 push "sndbuf 393216"
@@ -273,7 +273,7 @@ push "redirect-gateway def1"
 push "route-method exe"
 push "route-delay 2"
 client-to-client
-keepalive 50 150
+keepalive 10 60
 persist-tun
 persist-key
 persist-remote-ip
