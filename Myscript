@@ -274,6 +274,7 @@ push "route-method exe"
 push "route-delay 2"
 client-to-client
 keepalive 10 60
+ping-restart
 persist-tun
 persist-key
 persist-remote-ip
