@@ -273,7 +273,7 @@ push "redirect-gateway def1"
 push "route-method exe"
 push "route-delay 2"
 client-to-client
-ping-timer-rem
+keep-alive 60 120
 persist-tun
 persist-key
 persist-remote-ip
