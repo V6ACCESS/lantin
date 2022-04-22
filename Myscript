@@ -251,7 +251,6 @@ ca /etc/openvpn/ca.crt
 cert /etc/openvpn/server.crt
 key /etc/openvpn/server.key
 dh /etc/openvpn/dh.pem
-duplicate-cn
 cipher none
 ncp-disable
 auth none
