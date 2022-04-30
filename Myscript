@@ -273,13 +273,13 @@ push "redirect-gateway def1"
 push "route-method exe"
 push "route-delay 2"
 client-to-client
-keepalive 60 120
+keepalive 10 60
 persist-tun
 persist-key
 persist-remote-ip
 status /etc/openvpn/stats.txt
 log /etc/openvpn/openvpn.log
-verb 2
+verb 4
 script-security 2
 socket-flags TCP_NODELAY
 push "socket-flags TCP_NODELAY"
