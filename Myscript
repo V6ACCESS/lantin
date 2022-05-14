@@ -17,7 +17,7 @@ SSH_Port1='22'
 SSH_Port2='225'
 
 # Your SSH Banner
-SSH_Banner='https://pastebin.com/raw/d7jULvq8'
+SSH_Banner='https://raw.githubusercontent.com/V6ACCESS/banner/main/ServerMessages'
 
 # Dropbear Ports
 Dropbear_Port1='550'
