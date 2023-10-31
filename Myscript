@@ -32,7 +32,7 @@ OpenVPN_Port1='110' # take note when you change this port, openvpn sun noload co
 
 # Privoxy Ports (must be 1024 or higher)
 Privoxy_Port1='8000'
-Privoxy_Port2='8118'
+Privoxy_Port2='8080'
 
 # OpenVPN Config Download Port
 OvpnDownload_Port='86' # Before changing this value, please read this document. It contains all unsafe ports for Google Chrome Browser, please read from line #23 to line #89: https://chromium.googlesource.com/chromium/src.git/+/refs/heads/master/net/base/port_util.cc
@@ -128,7 +128,7 @@ X11Forwarding yes
 PrintMotd no
 ClientAliveInterval 240
 ClientAliveCountMax 2
-UseDNS no
+UseDNS yes
 Banner /etc/banner
 AcceptEnv LANG LC_*
 Subsystem   sftp  /usr/lib/openssh/sftp-server
@@ -513,15 +513,15 @@ request_header_access Accept-Charset allow all
 request_header_access Accept-Encoding allow all
 request_header_access Accept-Language allow all
 request_header_access Connection allow all
-request_header_access X-Forwarded-For deny all
-request_header_access Via deny all
-request_header_access Referer deny all
-request_header_access All deny all
+request_header_access X-Forwarded-For allow all
+request_header_access Via allow all
+request_header_access Referer allow all
+request_header_access All allow all
 http_access allow localhost
-http_access deny all
+http_access allow all
 http_port 127.0.0.1:8989
 cache_peer 127.0.0.1 parent SquidCacheHelper 7 no-query no-digest default
-cache deny all
+cache allow all
 mySquid
  sed -i "s|SquidCacheHelper|$Privoxy_Port1|g" /etc/squid/squid.conf
 
